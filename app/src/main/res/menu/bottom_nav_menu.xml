@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:title="Current"
+        android:id="@+id/currentLocationFragment"
+        android:icon="@drawable/common_full_open_on_phone"
+        >
+
+    </item>
+    <item
+        android:id="@+id/bonusCitiesFragment"
+        android:title="Bonus"
+        android:icon="@drawable/common_google_signin_btn_icon_dark_normal"
+        >
+
+    </item>
+
+</menu>

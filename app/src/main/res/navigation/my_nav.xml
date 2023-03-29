@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/currentLocationFragment">
+
+    <fragment
+        android:id="@+id/currentLocationFragment"
+        android:name="com.example.powerhouseevaluation.ui.fragments.CurrentLocationFragment"
+        android:label="fragment_current_location"
+        tools:layout="@layout/fragment_current_location" />
+    <fragment
+        android:id="@+id/displayBonusFragment"
+        android:name="com.example.powerhouseevaluation.ui.fragments.DisplayBonusFragment"
+        android:label="fragment_display_bonus"
+        tools:layout="@layout/fragment_display_bonus" >
+        <action
+            android:id="@+id/action_displayBonusFragment_to_bonusCitiesFragment"
+            app:destination="@id/bonusCitiesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bonusCitiesFragment"
+        android:name="com.example.powerhouseevaluation.ui.fragments.BonusCitiesFragment"
+        android:label="fragment_bonus_cities"
+        tools:layout="@layout/fragment_bonus_cities" />
+</navigation>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="forecastforday"
+            type="com.example.powerhouseevaluation.models.ForecastdayX" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="290dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="7dp"
+            app:cardCornerRadius="5dp"
+            app:cardBackgroundColor="@color/Cream"
+            app:strokeWidth="1dp"
+            app:strokeColor="@color/BalticSeabgcolor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/city_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="12dp"
+                    android:text="City"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/city_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/city_text"
+                    app:layout_constraintStart_toEndOf="@+id/city_text"
+                    app:layout_constraintTop_toTopOf="@+id/city_text"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <ImageView
+                    android:id="@+id/temp_image"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/city_text"
+                    app:srcCompat="@drawable/img" />
+
+                <ImageView
+                    android:id="@+id/pressure_image"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="32dp"
+                    app:layout_constraintEnd_toEndOf="@+id/temp_image"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/temp_image"
+                    app:layout_constraintTop_toBottomOf="@+id/temp_image"
+                    app:srcCompat="@drawable/pressure_icon" />
+
+                <ImageView
+                    android:id="@+id/condition_desc"
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <ImageView
+                    android:id="@+id/humidity_image"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="28dp"
+                    app:layout_constraintEnd_toEndOf="@+id/pressure_image"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/pressure_image"
+                    app:layout_constraintTop_toBottomOf="@+id/pressure_image"
+                    app:srcCompat="@drawable/humidity_icon" />
+
+                <TextView
+                    android:id="@+id/temp_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="TextView"
+                    app:layout_constraintBottom_toBottomOf="@+id/temp_image"
+                    app:layout_constraintStart_toEndOf="@+id/temp_image"
+                    app:layout_constraintTop_toTopOf="@+id/temp_image"
+                    app:layout_constraintVertical_bias="0.476" />
+
+                <TextView
+                    android:id="@+id/pressure_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="TextView"
+                    app:layout_constraintBottom_toBottomOf="@+id/pressure_image"
+                    app:layout_constraintStart_toEndOf="@+id/pressure_image"
+                    app:layout_constraintTop_toTopOf="@+id/pressure_image"
+                    app:layout_constraintVertical_bias="0.38" />
+
+                <TextView
+                    android:id="@+id/humidity_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="13dp"
+                    android:text="TextView"
+                    app:layout_constraintBottom_toBottomOf="@+id/humidity_image"
+                    app:layout_constraintStart_toEndOf="@+id/humidity_image"
+                    app:layout_constraintTop_toTopOf="@+id/humidity_image" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
