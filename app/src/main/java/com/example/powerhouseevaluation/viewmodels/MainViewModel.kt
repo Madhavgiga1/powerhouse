@@ -21,6 +21,7 @@ import javax.inject.Inject
 class MainViewModel @Inject constructor(private val repository: Repository,application: Application):AndroidViewModel(application){
     // using a combination of LiveData and NetworkResult, we can observe changes to the result of the network request and handle them appropriately in the UI layer. For example, we can show a loading indicator while the request is being made, display an error message if the request fails, and show the forecast data if the request is successful.
     var forecastResponse: MutableLiveData<NetworkResult<ForecastDay>> = MutableLiveData()
+    var allchannels= ArrayList<ForecastDay>()
     fun getForecast(queries:Map<String,String>)=viewModelScope.launch{
         getForecastSafeCall(queries)
     }

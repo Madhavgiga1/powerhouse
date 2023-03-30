@@ -19,9 +19,9 @@
             android:layout_height="0dp"
             android:layout_margin="7dp"
             app:cardCornerRadius="5dp"
-            app:cardBackgroundColor="@color/Cream"
-            app:strokeWidth="1dp"
-            app:strokeColor="@color/BalticSeabgcolor"
+            app:cardBackgroundColor="#BD52524C"
+            app:strokeWidth="2dp"
+            app:strokeColor="@color/Cream"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -33,39 +33,48 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/city_text"
+                    android:id="@+id/date_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="12dp"
-                    android:text="City"
+
+                    android:textColor="@color/BalticSeabgcolor"
+                    android:textSize="18sp"
+                    app:fontFamily="@font/anton"
+                    android:text="Date : "
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/city_name"
+                    android:id="@+id/date_value"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/city_text"
-                    app:layout_constraintStart_toEndOf="@+id/city_text"
-                    app:layout_constraintTop_toTopOf="@+id/city_text"
+                    android:textColor="@color/Cream"
+                    android:text="@{String.valueOf(forecastforday.date)}"
+                    android:textSize="18sp"
+                    app:fontFamily="@font/anton"
+
+                    app:layout_constraintBottom_toBottomOf="@+id/date_text"
+                    app:layout_constraintStart_toEndOf="@+id/date_text"
+                    app:layout_constraintTop_toTopOf="@+id/date_text"
                     app:layout_constraintVertical_bias="0.0" />
 
                 <ImageView
                     android:id="@+id/temp_image"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="28dp"
+                    android:layout_marginTop="20dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/city_text"
+                    app:layout_constraintTop_toBottomOf="@+id/date_text"
                     app:srcCompat="@drawable/img" />
 
                 <ImageView
                     android:id="@+id/pressure_image"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:layout_marginTop="32dp"
                     app:layout_constraintEnd_toEndOf="@+id/temp_image"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -74,20 +83,11 @@
                     app:srcCompat="@drawable/pressure_icon" />
 
                 <ImageView
-                    android:id="@+id/condition_desc"
-                    android:layout_width="140dp"
-                    android:layout_height="140dp"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginEnd="16dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:srcCompat="@tools:sample/avatars" />
-
-                <ImageView
                     android:id="@+id/humidity_image"
+
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:layout_marginTop="28dp"
+                    android:layout_marginTop="20dp"
                     app:layout_constraintEnd_toEndOf="@+id/pressure_image"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/pressure_image"
@@ -99,7 +99,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:text="TextView"
+                    android:textColor="@color/Cream"
+                    android:textSize="18sp"
+                    app:fontFamily="@font/anton"
+                    android:text="@{String.valueOf(forecastforday.Day.avgtempC)+ `C`}"
                     app:layout_constraintBottom_toBottomOf="@+id/temp_image"
                     app:layout_constraintStart_toEndOf="@+id/temp_image"
                     app:layout_constraintTop_toTopOf="@+id/temp_image"
@@ -110,7 +113,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:text="TextView"
+                    android:textColor="@color/Cream"
+                    android:textSize="18sp"
+                    app:fontFamily="@font/anton"
+                    android:text="@{String.valueOf(forecastforday.Day.maxwindKph)+ `kph`}"
                     app:layout_constraintBottom_toBottomOf="@+id/pressure_image"
                     app:layout_constraintStart_toEndOf="@+id/pressure_image"
                     app:layout_constraintTop_toTopOf="@+id/pressure_image"
@@ -119,12 +125,67 @@
                 <TextView
                     android:id="@+id/humidity_value"
                     android:layout_width="wrap_content"
+                    android:textColor="@color/Cream"
+                    android:textSize="18sp"
+                    app:fontFamily="@font/anton"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="13dp"
-                    android:text="TextView"
+                    android:text="@{String.valueOf(forecastforday.Day.avghumidity)+ `%`}"
+
                     app:layout_constraintBottom_toBottomOf="@+id/humidity_image"
                     app:layout_constraintStart_toEndOf="@+id/humidity_image"
                     app:layout_constraintTop_toTopOf="@+id/humidity_image" />
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="72dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/temp_image"
+                    app:layout_constraintStart_toEndOf="@+id/temp_value"
+                    app:layout_constraintTop_toTopOf="@+id/temp_image"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/rays" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="32dp"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/imageView"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView"
+                    app:srcCompat="@drawable/wind" />
+
+                <TextView
+                    android:id="@+id/uvrays_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:textColor="@color/Cream"
+                    android:textSize="18sp"
+                    app:fontFamily="@font/anton"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                    android:text="@{String.valueOf(forecastforday.Day.uv) + `mW/m2`}"
+                    app:layout_constraintStart_toEndOf="@+id/imageView"
+                    app:layout_constraintTop_toTopOf="@+id/imageView"
+                    app:layout_constraintVertical_bias="0.29" />
+
+                <TextView
+                    android:id="@+id/windkph_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:textColor="@color/Cream"
+                    android:text="@{String.valueOf(forecastforday.Day.maxwindKph)+ `kph`}"
+                    android:textSize="18sp"
+                    app:fontFamily="@font/anton"
+
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+                    app:layout_constraintStart_toEndOf="@+id/imageView2"
+                    app:layout_constraintTop_toTopOf="@+id/imageView2"
+                    app:layout_constraintVertical_bias="0.258" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.card.MaterialCardView>
     </androidx.constraintlayout.widget.ConstraintLayout>

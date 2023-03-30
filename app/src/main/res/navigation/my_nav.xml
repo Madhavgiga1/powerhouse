@@ -23,5 +23,9 @@
         android:id="@+id/bonusCitiesFragment"
         android:name="com.example.powerhouseevaluation.ui.fragments.BonusCitiesFragment"
         android:label="fragment_bonus_cities"
-        tools:layout="@layout/fragment_bonus_cities" />
+        tools:layout="@layout/fragment_bonus_cities" >
+        <argument
+            android:name="Forecastforday"
+            app:argType="com.example.powerhouseevaluation.models.ForecastdayX" />
+    </fragment>
 </navigation>

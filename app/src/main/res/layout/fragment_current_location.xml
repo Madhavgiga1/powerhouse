@@ -12,9 +12,9 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
 
-        android:layout_margin="7dp"
-        app:cardBackgroundColor="#D5D2D9"
-        app:cardCornerRadius="14dp"
+
+        app:cardBackgroundColor="@color/BalticSeabgcolor"
+        app:cardCornerRadius="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,12 +28,41 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/forecast_recyclerview"
-                android:layout_width="396dp"
-                android:layout_height="716dp"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+
+                android:layout_marginTop="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+            <TextView
+                android:id="@+id/Location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:textColor="@color/Cream"
+                android:layout_marginTop="16dp"
+                android:textSize="18sp"
+                android:text="Location"
+                app:fontFamily="@font/anton"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:textSize="18sp"
+                android:text="TextView"
+                android:textColor="@color/Cream"
+                app:fontFamily="@font/anton"
+                app:layout_constraintBottom_toBottomOf="@+id/Location"
+                app:layout_constraintStart_toEndOf="@+id/Location"
+                app:layout_constraintTop_toTopOf="@+id/Location"
+                app:layout_constraintVertical_bias="0.0" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 
