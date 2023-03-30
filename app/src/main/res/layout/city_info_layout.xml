@@ -7,11 +7,16 @@
         <variable
             name="cityforecast"
             type="com.example.powerhouseevaluation.models.ForecastDay" />
+        <variable
+            name="cityforecastx"
+            type="com.example.powerhouseevaluation.models.ForecastdayX">
+        </variable>
 
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
+        onWeatherClickListener="@{cityforecastx}"
         android:layout_height="250dp">
 
         <com.google.android.material.card.MaterialCardView
@@ -55,7 +60,7 @@
                     android:textColor="@color/Cream"
                     android:textSize="16sp"
                     app:fontFamily="@font/anton"
-                    android:text="TextView"
+                    android:text="@{String.valueOf(cityforecastx.date)}"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/City_name" />
 
@@ -77,7 +82,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="28dp"
-                    android:text="TextView"
+                    android:text="@{String.valueOf(cityforecastx.day.condition.text)}"
                     android:textColor="@color/Cream"
                     android:textSize="14sp"
                     app:fontFamily="@font/anton"
@@ -107,7 +112,7 @@
                     android:textColor="@color/Cream"
                     android:textSize="14sp"
                     app:fontFamily="@font/anton"
-                    android:text="TextView"
+                    android:text="@{String.valueOf(cityforecastx.day.maxtempC)+ `C`}"
                     app:layout_constraintBottom_toBottomOf="@+id/MaxTemp"
                     app:layout_constraintStart_toEndOf="@+id/MaxTemp"
                     app:layout_constraintTop_toTopOf="@+id/MaxTemp" />
@@ -134,7 +139,7 @@
                     android:textColor="@color/Cream"
                     android:textSize="14sp"
                     app:fontFamily="@font/anton"
-                    android:text="TextView"
+                    android:text="@{String.valueOf(cityforecastx.day.mintempC)+ `C`}"
                     app:layout_constraintBottom_toBottomOf="@+id/Min_temp"
                     app:layout_constraintStart_toEndOf="@+id/Min_temp"
                     app:layout_constraintTop_toTopOf="@+id/Min_temp" />

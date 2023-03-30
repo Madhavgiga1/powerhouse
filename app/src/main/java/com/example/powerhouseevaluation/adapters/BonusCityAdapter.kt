@@ -11,6 +11,7 @@ class BonusCityAdapter():RecyclerView.Adapter<BonusCityAdapter.BonusCityViewHold
     class BonusCityViewHolder(private val binding: CityInfoLayoutBinding):RecyclerView.ViewHolder(binding.root){
         fun bind(indivcityfrecast: ForecastDay){
             binding.cityforecast=indivcityfrecast
+            binding.cityforecastx=indivcityfrecast.forecast.forecastday.first()
             binding.executePendingBindings()
 
         }

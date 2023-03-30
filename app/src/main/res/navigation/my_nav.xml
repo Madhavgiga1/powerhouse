@@ -15,9 +15,9 @@
         android:name="com.example.powerhouseevaluation.ui.fragments.DisplayBonusFragment"
         android:label="fragment_display_bonus"
         tools:layout="@layout/fragment_display_bonus" >
-        <action
-            android:id="@+id/action_displayBonusFragment_to_bonusCitiesFragment"
-            app:destination="@id/bonusCitiesFragment" />
+        <argument
+            android:name="forecastforcity"
+            app:argType="com.example.powerhouseevaluation.models.ForecastdayX" />
     </fragment>
     <fragment
         android:id="@+id/bonusCitiesFragment"
@@ -27,5 +27,8 @@
         <argument
             android:name="Forecastforday"
             app:argType="com.example.powerhouseevaluation.models.ForecastdayX" />
+        <action
+            android:id="@+id/action_bonusCitiesFragment_to_displayBonusFragment"
+            app:destination="@id/displayBonusFragment" />
     </fragment>
 </navigation>

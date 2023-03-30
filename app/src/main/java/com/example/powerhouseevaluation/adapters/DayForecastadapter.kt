@@ -4,9 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.powerhouseevaluation.databinding.DailyForecastLayoutBinding
-import com.example.powerhouseevaluation.models.ForecastDay
 import com.example.powerhouseevaluation.models.ForecastdayX
-import com.squareup.picasso.Picasso
 
 
 class DayForecastadapter():RecyclerView.Adapter<DayForecastadapter.DayForecastViewHolder>() {

@@ -1,260 +1,269 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.fragments.DisplayBonusFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
+        <variable
+            name="forecastforcity"
+            type="com.example.powerhouseevaluation.models.ForecastdayX" />
+    </data>
 
-    <com.google.android.material.card.MaterialCardView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:padding="10dp"
-        app:cardCornerRadius="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_goneMarginBottom="5dp"
-        app:layout_goneMarginEnd="5dp"
-        app:layout_goneMarginStart="5dp"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragments.DisplayBonusFragment">
 
-        app:layout_goneMarginTop="5dp"
-        app:strokeColor="@color/BalticSeabgcolor"
-        app:strokeWidth="3dp">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#96A2A6">
+            android:layout_height="0dp"
+            android:padding="10dp"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_goneMarginBottom="5dp"
+            app:layout_goneMarginEnd="5dp"
+            app:layout_goneMarginStart="5dp"
 
-            <TextView
-                android:id="@+id/sunrise_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:text="Rain Chances(%):"
-                android:textSize="14sp"
-                app:fontFamily="@font/anton"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView9"
-                app:layout_constraintStart_toEndOf="@+id/imageView9"
-                app:layout_constraintTop_toTopOf="@+id/imageView9"
-                app:layout_constraintVertical_bias="0.533" />
+            app:layout_goneMarginTop="5dp"
+            app:strokeColor="@color/BalticSeabgcolor"
+            app:strokeWidth="3dp">
 
-            <TextView
-                android:id="@+id/sunset_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:text="UV:"
-                android:textSize="14sp"
-                app:fontFamily="@font/anton"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView11"
-                app:layout_constraintStart_toEndOf="@+id/imageView11"
-                app:layout_constraintTop_toTopOf="@+id/imageView11"
-                app:layout_constraintVertical_bias="0.0" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/Pewter">
 
-            <TextView
-                android:id="@+id/UV_value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:text="@{String.valueOf(hourlyforecast.uv)}"
-                android:textColor="@color/BalticSeabgcolor"
-                android:textSize="14sp"
-                app:fontFamily="@font/anton"
-                app:layout_constraintBottom_toBottomOf="@+id/sunset_text"
-                app:layout_constraintStart_toEndOf="@+id/sunset_text"
-                app:layout_constraintTop_toTopOf="@+id/sunset_text"
-                app:layout_constraintVertical_bias="1.0" />
+                <TextView
+                    android:id="@+id/sunrise_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:text="Rain Chances(%):"
+                    android:textSize="14sp"
+                    app:fontFamily="@font/anton"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView9"
+                    app:layout_constraintStart_toEndOf="@+id/imageView9"
+                    app:layout_constraintTop_toTopOf="@+id/imageView9"
+                    app:layout_constraintVertical_bias="0.533" />
 
-            <TextView
-                android:id="@+id/Rainchances_value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:text="@{String.valueOf(hourlyforecast.chance_of_rain)}"
-                android:textColor="@color/BalticSeabgcolor"
-                android:textSize="14sp"
-                app:fontFamily="@font/anton"
-                app:layout_constraintBottom_toBottomOf="@+id/sunrise_text"
-                app:layout_constraintStart_toEndOf="@+id/sunrise_text"
-                app:layout_constraintTop_toTopOf="@+id/sunrise_text"
-                app:layout_constraintVertical_bias="0.75" />
+                <TextView
+                    android:id="@+id/sunset_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="UV:"
+                    android:textSize="14sp"
+                    app:fontFamily="@font/anton"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView11"
+                    app:layout_constraintStart_toEndOf="@+id/imageView11"
+                    app:layout_constraintTop_toTopOf="@+id/imageView11"
+                    app:layout_constraintVertical_bias="0.0" />
 
-            <TextView
-                android:id="@+id/Min_Temperature"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                <TextView
+                    android:id="@+id/UV_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="@{String.valueOf(forecastforcity.day.uv)}"
+                    android:textColor="@color/BalticSeabgcolor"
+                    android:textSize="14sp"
+                    app:fontFamily="@font/anton"
+                    app:layout_constraintBottom_toBottomOf="@+id/sunset_text"
+                    app:layout_constraintStart_toEndOf="@+id/sunset_text"
+                    app:layout_constraintTop_toTopOf="@+id/sunset_text"
+                    app:layout_constraintVertical_bias="1.0" />
 
-                android:layout_marginStart="20dp"
-                android:text="Temperature:"
-                app:fontFamily="@font/anton"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView12"
-                app:layout_constraintStart_toEndOf="@+id/imageView12"
-                app:layout_constraintTop_toTopOf="@+id/imageView12"
-                app:layout_constraintVertical_bias="0.466" />
+                <TextView
+                    android:id="@+id/Rainchances_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@{String.valueOf(forecastforcity.day.dailyChanceOfRain)+`%`}"
+                    android:textColor="@color/BalticSeabgcolor"
+                    android:textSize="14sp"
+                    app:fontFamily="@font/anton"
+                    app:layout_constraintBottom_toBottomOf="@+id/sunrise_text"
+                    app:layout_constraintStart_toEndOf="@+id/sunrise_text"
+                    app:layout_constraintTop_toTopOf="@+id/sunrise_text"
+                    app:layout_constraintVertical_bias="0.75" />
 
-            <TextView
-                android:id="@+id/Max_temp_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                <TextView
+                    android:id="@+id/Min_Temperature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
 
-                android:layout_marginStart="20dp"
-                android:text="WindSpeed(kPH)"
-                app:fontFamily="@font/anton"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView13"
-                app:layout_constraintStart_toEndOf="@+id/imageView13"
-                app:layout_constraintTop_toTopOf="@+id/imageView13"
-                app:layout_constraintVertical_bias="0.0" />
+                    android:layout_marginStart="20dp"
+                    android:text="Temperature:"
+                    app:fontFamily="@font/anton"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView12"
+                    app:layout_constraintStart_toEndOf="@+id/imageView12"
+                    app:layout_constraintTop_toTopOf="@+id/imageView12"
+                    app:layout_constraintVertical_bias="0.466" />
 
-            <TextView
-                android:id="@+id/Mintemp_value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="28dp"
-                android:text="@{String.valueOf(hourlyforecast.temp_c)}"
-                android:textColor="@color/BalticSeabgcolor"
-                android:textSize="14sp"
-                app:fontFamily="@font/anton"
-                app:layout_constraintBottom_toBottomOf="@+id/Min_Temperature"
-                app:layout_constraintStart_toEndOf="@+id/Min_Temperature"
-                app:layout_constraintTop_toTopOf="@+id/Min_Temperature"
-                app:layout_constraintVertical_bias="0.0" />
+                <TextView
+                    android:id="@+id/Max_temp_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
 
-            <TextView
-                android:id="@+id/windspeedhourly_value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:text="@{String.valueOf(hourlyforecast.wind_kph)}"
-                android:textColor="@color/BalticSeabgcolor"
-                android:textSize="14sp"
-                app:fontFamily="@font/anton"
-                app:layout_constraintBottom_toBottomOf="@+id/Max_temp_text"
-                app:layout_constraintStart_toEndOf="@+id/Max_temp_text"
-                app:layout_constraintTop_toTopOf="@+id/Max_temp_text"
-                app:layout_constraintVertical_bias="0.0" />
+                    android:layout_marginStart="20dp"
+                    android:text="WindSpeed(kPH)"
+                    app:fontFamily="@font/anton"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView13"
+                    app:layout_constraintStart_toEndOf="@+id/imageView13"
+                    app:layout_constraintTop_toTopOf="@+id/imageView13"
+                    app:layout_constraintVertical_bias="0.0" />
 
-            <TextView
-                android:id="@+id/Time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="28dp"
-                android:text="@{String.valueOf(hourlyforecast.time)}"
-                android:textColor="@color/BalticSeabgcolor"
-                android:textSize="16sp"
-                app:fontFamily="@font/anton"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView12" />
+                <TextView
+                    android:id="@+id/Mintemp_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="28dp"
+                    android:text="@{String.valueOf(forecastforcity.day.avgtempC)+ `C`}"
+                    android:textColor="@color/BalticSeabgcolor"
+                    android:textSize="14sp"
+                    app:fontFamily="@font/anton"
+                    app:layout_constraintBottom_toBottomOf="@+id/Min_Temperature"
+                    app:layout_constraintStart_toEndOf="@+id/Min_Temperature"
+                    app:layout_constraintTop_toTopOf="@+id/Min_Temperature"
+                    app:layout_constraintVertical_bias="0.0" />
 
-            <TextView
-                android:id="@+id/Avghumid"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:text="Humidity(%):"
-                android:textSize="14sp"
-                app:fontFamily="@font/anton"
-                app:layout_constraintBottom_toBottomOf="@+id/humidity_icon"
-                app:layout_constraintStart_toEndOf="@+id/humidity_icon"
-                app:layout_constraintTop_toTopOf="@+id/humidity_icon"
-                app:layout_constraintVertical_bias="0.48" />
+                <TextView
+                    android:id="@+id/windspeedhourly_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@{String.valueOf(forecastforcity.day.maxwindKph)+`kPh`}"
+                    android:textColor="@color/BalticSeabgcolor"
+                    android:textSize="14sp"
+                    app:fontFamily="@font/anton"
+                    app:layout_constraintBottom_toBottomOf="@+id/Max_temp_text"
+                    app:layout_constraintStart_toEndOf="@+id/Max_temp_text"
+                    app:layout_constraintTop_toTopOf="@+id/Max_temp_text"
+                    app:layout_constraintVertical_bias="0.0" />
 
-            <TextView
-                android:id="@+id/humidityValue_value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="59dp"
+                <TextView
+                    android:id="@+id/Time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="28dp"
+                    android:text="@{String.valueOf(forecastforcity.date)}"
+                    android:textColor="@color/BalticSeabgcolor"
+                    android:textSize="16sp"
+                    app:fontFamily="@font/anton"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView12" />
 
-                android:layout_marginBottom="2dp"
-                android:text="@{String.valueOf(hourlyforecast.humidity)}"
-                android:textColor="@color/BalticSeabgcolor"
-                android:textSize="13sp"
-                app:fontFamily="@font/anton"
-                app:layout_constraintBottom_toBottomOf="@+id/Avghumid"
-                app:layout_constraintStart_toEndOf="@+id/Avghumid"
-                app:layout_constraintTop_toTopOf="@+id/Avghumid" />
+                <TextView
+                    android:id="@+id/Avghumid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="Humidity(%):"
+                    android:textSize="14sp"
+                    app:fontFamily="@font/anton"
+                    app:layout_constraintBottom_toBottomOf="@+id/humidity_icon"
+                    app:layout_constraintStart_toEndOf="@+id/humidity_icon"
+                    app:layout_constraintTop_toTopOf="@+id/humidity_icon"
+                    app:layout_constraintVertical_bias="0.48" />
 
-            <TextView
-                android:id="@+id/Description_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="44dp"
-                android:text="Description:"
-                android:textSize="16sp"
-                app:fontFamily="@font/anton"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/humidity_icon" />
+                <TextView
+                    android:id="@+id/humidityValue_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="59dp"
 
-            <TextView
-                android:id="@+id/desc_value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:text="@{hourlyforecast.condition.text}"
-                android:textColor="@color/BalticSeabgcolor"
-                android:textSize="14sp"
-                app:fontFamily="@font/anton"
-                app:layout_constraintBottom_toBottomOf="@+id/Description_text"
-                app:layout_constraintStart_toEndOf="@+id/Description_text"
-                app:layout_constraintTop_toTopOf="@+id/Description_text"
-                app:layout_constraintVertical_bias="1.0" />
+                    android:layout_marginBottom="2dp"
+                    android:text="@{String.valueOf(forecastforcity.day.avghumidity)+`%`}"
+                    android:textColor="@color/BalticSeabgcolor"
+                    android:textSize="13sp"
+                    app:fontFamily="@font/anton"
+                    app:layout_constraintBottom_toBottomOf="@+id/Avghumid"
+                    app:layout_constraintStart_toEndOf="@+id/Avghumid"
+                    app:layout_constraintTop_toTopOf="@+id/Avghumid" />
 
-            <ImageView
-                android:id="@+id/imageView9"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="28dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/preci_icon" />
+                <TextView
+                    android:id="@+id/Description_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="44dp"
+                    android:text="Description:"
+                    android:textSize="16sp"
+                    app:fontFamily="@font/anton"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/humidity_icon" />
 
-            <ImageView
-                android:id="@+id/imageView11"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="28dp"
-                android:layout_marginTop="28dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/Time"
-                app:srcCompat="@drawable/rays" />
+                <TextView
+                    android:id="@+id/desc_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:text="@{forecastforcity.day.condition.text}"
+                    android:textColor="@color/BalticSeabgcolor"
+                    android:textSize="14sp"
+                    app:fontFamily="@font/anton"
+                    app:layout_constraintBottom_toBottomOf="@+id/Description_text"
+                    app:layout_constraintStart_toEndOf="@+id/Description_text"
+                    app:layout_constraintTop_toTopOf="@+id/Description_text"
+                    app:layout_constraintVertical_bias="1.0" />
 
-            <ImageView
-                android:id="@+id/imageView12"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="28dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView9"
-                app:srcCompat="@drawable/img" />
+                <ImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="28dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/preci_icon" />
 
-            <ImageView
-                android:id="@+id/imageView13"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="28dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView11"
-                app:srcCompat="@drawable/wind" />
+                <ImageView
+                    android:id="@+id/imageView11"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="28dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/Time"
+                    app:srcCompat="@drawable/rays" />
 
-            <ImageView
-                android:id="@+id/humidity_icon"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="28dp"
-                android:src="@drawable/humidity_icon"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView13" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <ImageView
+                    android:id="@+id/imageView12"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="28dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView9"
+                    app:srcCompat="@drawable/img" />
 
-    </com.google.android.material.card.MaterialCardView>
+                <ImageView
+                    android:id="@+id/imageView13"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="28dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView11"
+                    app:srcCompat="@drawable/wind" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <ImageView
+                    android:id="@+id/humidity_icon"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="28dp"
+                    android:src="@drawable/humidity_icon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView13" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
